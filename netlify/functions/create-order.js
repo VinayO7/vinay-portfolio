@@ -27,14 +27,15 @@ exports.handler = async (event) => {
     };
 
   } catch (error) {
+  console.error("CREATE ORDER ERROR:", error);
 
-    return {
-      statusCode: 500,
-      body: JSON.stringify({
-        error: error.message
-      })
-    };
-
-  }
+  return {
+    statusCode: 500,
+    body: JSON.stringify({
+      error: error.message,
+      stack: error.stack
+    })
+  };
+}
 
 };

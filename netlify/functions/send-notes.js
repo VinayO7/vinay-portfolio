@@ -59,7 +59,7 @@ exports.handler = async (event) => {
       `https://vinaynalavade.netlify.app/download.html?token=${token}`;
 
     await resend.emails.send({
-      from: "Vinay QA <noreply@vinaynalavade.in>",
+      from: "Vinay QA <onboarding@resend.dev>",
       to: email,
       subject: "Your Core Java Notes",
 

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -30,10 +31,8 @@ body{
   justify-content:center;
   align-items:center;
   padding:40px 20px;
-
   background:var(--bg);
   color:var(--text);
-
   font-family:'JetBrains Mono', monospace;
 }
 
@@ -41,11 +40,9 @@ body::before{
   content:"";
   position:fixed;
   inset:0;
-
   background-image:
   linear-gradient(rgba(0,229,160,.04) 1px, transparent 1px),
   linear-gradient(90deg, rgba(0,229,160,.04) 1px, transparent 1px);
-
   background-size:60px 60px;
   pointer-events:none;
 }
@@ -70,10 +67,8 @@ body::before{
 .card{
   position:relative;
   z-index:2;
-
   width:100%;
   max-width:700px;
-
   padding:50px;
 
   background:rgba(255,255,255,.06);
@@ -133,29 +128,19 @@ label{
 
 input,
 select{
-
   width:100%;
-
   padding:16px;
-
   border-radius:12px;
-
   border:1px solid rgba(255,255,255,.12);
-
   background:rgba(255,255,255,.05);
-
   color:white;
-
   outline:none;
-
   font-family:'JetBrains Mono', monospace;
 }
 
 input:focus,
 select:focus{
-
   border-color:rgba(0,229,160,.5);
-
   box-shadow:
   0 0 0 3px rgba(0,229,160,.08);
 }
@@ -167,25 +152,15 @@ select:focus{
 }
 
 .submit-btn{
-
   width:100%;
-
   margin-top:10px;
-
   padding:18px;
-
   border:none;
-
   border-radius:12px;
-
   background:var(--accent);
-
   color:#000;
-
   font-weight:700;
-
   cursor:pointer;
-
   transition:.25s ease;
 }
 
@@ -195,11 +170,16 @@ select:focus{
   0 10px 30px rgba(0,229,160,.25);
 }
 
+.submit-btn:disabled{
+  opacity:.7;
+  cursor:not-allowed;
+}
+
 .status{
   margin-top:20px;
   text-align:center;
-  color:var(--muted);
   font-size:14px;
+  min-height:24px;
 }
 
 .footer{
@@ -222,35 +202,10 @@ select:focus{
 }
 
 </style>
+
 </head>
 
 <body>
-
-<script>
-
-const paymentId =
-  sessionStorage.getItem("payment_id");
-
-if (!paymentId) {
-
-  document.body.innerHTML = `
-    <div style="
-      color:white;
-      font-family:sans-serif;
-      text-align:center;
-      padding:60px;
-    ">
-      Payment verification required.
-    </div>
-  `;
-
-  throw new Error(
-    "Payment verification required"
-  );
-
-}
-
-</script>
 
 <div class="glow"></div>
 
@@ -283,7 +238,7 @@ placeholder="Enter your full name">
 type="email"
 id="email"
 required
-placeholder="Enter your email">
+placeholder="Enter your email address">
 </div>
 
 <div class="form-group">
@@ -292,7 +247,6 @@ placeholder="Enter your email">
 <div class="phone-row">
 
 <select id="countryCode">
-
 <option value="+91">🇮🇳 +91</option>
 <option value="+1">🇺🇸 +1</option>
 <option value="+44">🇬🇧 +44</option>
@@ -300,7 +254,6 @@ placeholder="Enter your email">
 <option value="+971">🇦🇪 +971</option>
 <option value="+65">🇸🇬 +65</option>
 <option value="+81">🇯🇵 +81</option>
-
 </select>
 
 <input
@@ -313,12 +266,10 @@ placeholder="Phone number">
 </div>
 
 <button
+id="sendBtn"
 type="submit"
 class="submit-btn">
-
-Get Notes On Email
-
-</button>
+Get Notes On Email </button>
 
 </form>
 
@@ -343,6 +294,16 @@ async function(e){
 
   e.preventDefault();
 
+  const sendBtn =
+    document.getElementById(
+      "sendBtn"
+    );
+
+  const status =
+    document.getElementById(
+      "status"
+    );
+
   const fullName =
     document
     .getElementById("fullName")
@@ -366,18 +327,78 @@ async function(e){
     .value
     .trim();
 
-  document
-  .getElementById("status")
-  .textContent =
-  "Preparing your notes...";
+  const paymentId =
+    sessionStorage.getItem(
+      "payment_id"
+    ) || "manual-test";
 
-  console.log({
-    paymentId,
-    fullName,
-    email,
-    phone:
-      countryCode + phone
-  });
+  sendBtn.disabled = true;
+
+  status.innerHTML =
+    "Sending notes...";
+
+  try {
+
+    const response =
+      await fetch(
+        "/.netlify/functions/send-notes",
+        {
+          method:"POST",
+
+          headers:{
+            "Content-Type":
+            "application/json"
+          },
+
+          body:JSON.stringify({
+
+            fullName,
+            email,
+
+            phone:
+              countryCode + phone,
+
+            paymentId
+
+          })
+
+        }
+      );
+
+    const result =
+      await response.json();
+
+    if(result.success){
+
+      status.innerHTML =
+      "✅ Notes sent successfully. Please check your inbox and spam folder.";
+
+      document
+      .getElementById(
+        "customerForm"
+      )
+      .reset();
+
+    }else{
+
+      status.innerHTML =
+      "❌ " +
+      (result.error ||
+       result.message ||
+       "Failed to send notes.");
+
+    }
+
+  }catch(error){
+
+    console.error(error);
+
+    status.innerHTML =
+    "❌ Something went wrong. Please try again.";
+
+  }
+
+  sendBtn.disabled = false;
 
 });
 

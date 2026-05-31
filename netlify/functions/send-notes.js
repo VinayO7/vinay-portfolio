@@ -1,120 +1,178 @@
 const { Resend } = require("resend");
-const fs = require("fs");
-const path = require("path");
+const crypto = require("crypto");
+
+const { createClient } =
+require("@supabase/supabase-js");
 
 const resend =
-  new Resend(process.env.RESEND_API_KEY);
+new Resend(process.env.RESEND_API_KEY);
+
+const supabase =
+createClient(
+process.env.SUPABASE_URL,
+process.env.SUPABASE_SERVICE_ROLE_KEY
+);
 
 exports.handler = async (event) => {
 
-  try {
+try {
 
-    const {
+```
+const {
+  fullName,
+  email,
+  phone,
+  paymentId
+} = JSON.parse(event.body);
+
+if (
+  !fullName ||
+  !email ||
+  !paymentId
+) {
+
+  return {
+    statusCode: 400,
+    body: JSON.stringify({
+      success: false,
+      message:
+        "Missing required fields"
+    })
+  };
+
+}
+
+const token =
+  crypto
+  .randomBytes(24)
+  .toString("hex");
+
+const { error: insertError } =
+  await supabase
+  .from("downloads")
+  .insert([{
+
+    full_name:
       fullName,
-      email,
-      phone,
-      paymentId
-    } = JSON.parse(event.body);
 
-    if (
-      !fullName ||
-      !email ||
-      !paymentId
-    ) {
+    email,
 
-      return {
-        statusCode: 400,
-        body: JSON.stringify({
-          success: false,
-          message: "Missing required fields"
-        })
-      };
+    phone,
 
-    }
+    payment_id:
+      paymentId,
 
-    const pdfPath = path.join(
-        __dirname,
-        "CoreJava-Vinay.pdf"
-    );
+    token,
 
-    const pdfBuffer =
-      fs.readFileSync(pdfPath);
+    used:
+      false
 
-    await resend.emails.send({
+  }]);
 
-      from:
-        "Vinay QA <onboarding@resend.dev>",
+if (insertError) {
 
-      to: email,
+  throw insertError;
 
-      subject:
-        "Your Core Java Notes - Vinay.QA",
+}
 
-      html: `
-        <h2>Hello ${fullName},</h2>
+const downloadLink =
+```
 
-        <p>
-        Thank you for purchasing the
-        Core Java Notes.
-        </p>
+`https://vinaynalavade.netlify.app/download.html?token=${token}`;
 
-        <p>
-        Your notes are attached to this email.
-        </p>
+```
+await resend.emails.send({
 
-        <p>
-        Payment ID:
-        ${paymentId}
-        </p>
+  from:
+    "Vinay QA <onboarding@resend.dev>",
 
-        <p>
-        Happy Learning 🚀
-        </p>
+  to: email,
 
-        <p>
-        Vinay.QA
-        </p>
-      `,
+  subject:
+    "Your Core Java Notes",
 
-      attachments: [
+  html: `
 
-        {
-          filename:
-            "CoreJava-Vinay.pdf",
+  <h2>Hello ${fullName},</h2>
 
-          content:
-            pdfBuffer.toString("base64")
-        }
+  <p>
+  Thank you for purchasing
+  Core Java Notes.
+  </p>
 
-      ]
+  <p>
+  Click the button below
+  to download your notes.
+  </p>
 
-    });
+  <p>
+  <a
+  href="${downloadLink}"
+  style="
+  background:#00e5a0;
+  color:#000;
+  padding:12px 20px;
+  text-decoration:none;
+  border-radius:8px;
+  font-weight:bold;
+  ">
+  Download Notes
+  </a>
+  </p>
 
-    return {
+  <p>
+  This link:
+  </p>
 
-      statusCode: 200,
+  <ul>
+  <li>Works only once</li>
+  <li>Expires after 24 hours</li>
+  </ul>
 
-      body: JSON.stringify({
-        success: true
-      })
+  <p>
+  Payment ID:
+  ${paymentId}
+  </p>
 
-    };
+  <p>
+  Vinay.QA
+  </p>
 
-  } catch (error) {
+  `
+});
 
-    console.error(error);
+return {
 
-    return {
+  statusCode: 200,
 
-      statusCode: 500,
+  body: JSON.stringify({
+    success: true
+  })
 
-      body: JSON.stringify({
-        success: false,
-        error: error.message
-      })
+};
+```
 
-    };
+} catch (error) {
 
-  }
+```
+console.error(error);
+
+return {
+
+  statusCode: 500,
+
+  body: JSON.stringify({
+
+    success: false,
+
+    error:
+      error.message
+
+  })
+
+};
+```
+
+}
 
 };

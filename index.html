@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vinay Nalavade — QA Engineering</title>
+  <link rel="icon" type="image/svg+xml" href="favicon-light.svg">
+  <link id="favicon" rel="icon" href="favicon-dark.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=JetBrains+Mono:wght@300;400;500&family=Fraunces:ital,wght@0,300;0,600;1,300&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+</head>
+
+<body>
+
+  <!-- QUICK VIEW STICKY PANEL -->
+  <div id="quick-view">
+    <span class="tab-icon">QUICK VIEW</span>
+    <div class="qv-content">
+      <h4>Vinay Nalavade</h4>
+      <div class="qv-item">Experience: <span>1+ Years</span></div>
+      <div class="qv-item">Role: <span>QA Engineer</span></div>
+      <div class="qv-item">Skills: <span>Selenium, Postman, Python, SQL</span></div>
+      <span class="badge">● OPEN TO WORK</span>
+      <a href="#" class="qv-btn" id="open-contact">→ Contact</a>
+      <a href="https://drive.google.com/uc?export=download&id=1gmKEXRdXYbBTlMbwmUUtYEa5daQMzyYf " class="qv-btn"
+        style="background:transparent;color:var(--accent);border:1px solid rgba(0,229,160,0.3);margin-top:6px;">↓
+        Resume</a>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      VINAY<span class="logo-dot">.</span>QA
+    </a>
+    <div class="nav-right">
+      <ul>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li class="more-menu">
+          <a href="#">More ▾</a>
+
+          <div class="more-dropdown">
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#process">Process</a>
+            <a href="#defects">Defects</a>
+            <a href="#api-lab">API Lab</a>
+            <a href="#automation">Automation</a>
+            <a href="#tools">Tools</a>
+          </div>
+        </li>
+      </ul>
+      <button id="theme-toggle">🌙</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-glow"></div>
+
+    <div class="hero-left">
+      <div class="hero-tag fade-up">Quality Engineering Showcase</div>
+      <h1 class="fade-up">
+        Vinay<br>
+        <span class="line2">Nalavade</span>
+      </h1>
+      <p class="hero-desc fade-up">
+        I don't just find bugs. I understand why they exist, prevent their recurrence, and build systems that catch them
+        before they reach users.
+      </p>
+      <div class="hero-cta fade-up">
+        <a href="#" class="btn-primary" id="open-resume">View Resume →</a>
+        <a href="#contact" class="btn-ghost">Get In Touch</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="terminal-card">
+        <div class="terminal-bar">
+          <div class="dot dot-r"></div>
+          <div class="dot dot-y"></div>
+          <div class="dot dot-g"></div>
+          <span class="terminal-title">qa-session.sh</span>
+        </div>
+        <div class="terminal-body">
+          <div class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">run_test_suite
+              --module=checkout</span></div>
+          <div class="t-line t-out cyan">▶ Initializing test framework...</div>
+          <div class="t-line t-out">Loading 48 test cases...</div>
+          <div class="t-line t-out green">✓ TC_CHK_001 — Cart total validation PASS</div>
+          <div class="t-line t-out green">✓ TC_CHK_002 — Discount calculation PASS</div>
+          <div class="t-line t-out green">✓ TC_CHK_003 — Empty cart boundary PASS</div>
+          <div class="t-line t-out yellow">⚠ TC_CHK_004 — Negative qty edge case INVESTIGATING</div>
+          <div class="t-line t-out">Running API validation...</div>
+          <div class="t-line t-out green">✓ POST /order — Status 201, Schema OK</div>
+          <div class="t-line t-out green">✓ Response time: 234ms (threshold: 500ms)</div>
+          <div class="t-line"><br></div>
+          <div class="t-line t-out cyan">Summary: 47 PASS 1 INVESTIGATING</div>
+          <div class="t-line"><span class="t-prompt">$ </span><span class="t-cursor"></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT ME -->
+  <!-- ABOUT ME -->
+  <section id="about">
+    <div class="section-tag">about me</div>
+    <h2>Who I Am</h2>
+    <div class="about-showcase">
+      <div class="about-glow"></div>
+      <div class="about-main">
+        <div class="about-label">
+          QA ENGINEER • TESTER • ANALYST
+        </div>
+        <h3>
+          I break software before users do.
+        </h3>
+        <p class="about-desc">
+          I'm Vinay, a Computer Science graduate and QA Engineer with experience
+          in Manual Testing, Automation Testing, API Validation, SQL Verification,
+          and Insurance Domain Quality Assurance.
+        </p>
+        <p class="about-desc">
+          My work focuses on identifying defects, validating business-critical
+          data, improving testing efficiency, and ensuring software behaves
+          exactly as users expect.
+        </p>
+        <div class="about-highlights">
+          <div class="about-highlight">
+            <span>QA</span>
+            <small>Manual & Automation Testing</small>
+          </div>
+          <div class="about-highlight">
+            <span>API</span>
+            <small>Postman & Validation</small>
+          </div>
+          <div class="about-highlight">
+            <span>SQL</span>
+            <small>Database Verification</small>
+          </div>
+          <div class="about-highlight">
+            <span>DATA</span>
+            <small>Insurance Domain Analysis</small>
+          </div>
+        </div>
+      </div>
+      <div class="about-side">
+        <div class="about-stat">
+          <span>1+</span>
+          <small>Years Experience</small>
+        </div>
+        <div class="about-stat">
+          <span>QA</span>
+          <small>Quality Focused</small>
+        </div>
+        <div class="about-stat">
+          <span>API</span>
+          <small>Validation Driven</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-tag">experience</div>
+    <h2>Professional Experience</h2>
+
+    <div class="experience-timeline">
+
+      <div class="exp-card">
+        <div class="exp-date">Mar 2025 – Sep 2025</div>
+        <h3>Data Analyst – QA & Reporting</h3>
+        <div class="exp-company">ICICI Prudential Life Insurance (EOSGlobe)</div>
+
+        <ul>
+          <li>Verified reissued life insurance policies and identified policy processing errors.</li>
+          <li>Performed data validation using Life Asia, SAP BO, SQL, and Excel.</li>
+          <li>Generated validation reports and supported business decision-making.</li>
+          <li>Automated repetitive validation activities using Python and Excel.</li>
+          <li>Collaborated with operations teams to ensure policy accuracy and compliance.</li>
+        </ul>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-date">Jul 2024 – Dec 2024</div>
+        <h3>Software Testing Intern</h3>
+        <div class="exp-company">Robowaves Software Solutions Pvt Ltd</div>
+
+        <ul>
+          <li>Performed Manual Testing for web and mobile applications.</li>
+          <li>Executed API testing using Postman.</li>
+          <li>Created and maintained API documentation.</li>
+          <li>Participated in crowd beta testing projects.</li>
+          <li>Worked on functional, regression, and exploratory testing activities.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+
+    <div class="section-tag">
+      education
+    </div>
+
+    <h2>Academic Journey</h2>
+
+    <p class="section-sub">
+      My foundation in Computer Science and Technology shaped my analytical thinking,
+      problem-solving approach, and passion for quality engineering.
+    </p>
+
+    <div class="education-showcase">
+
+      <div class="education-glow"></div>
+
+      <div class="education-timeline">
+
+        <div class="edu-item">
+          <div class="edu-year">
+            2021 - 2024
+          </div>
+
+          <div class="edu-content">
+            <h3>B.Tech in Computer Science & Engineering</h3>
+
+            <div class="edu-college">
+              Fabtech Technical Campus, College of Engineering & Research, Solapur
+            </div>
+
+            <div class="edu-board">
+              Dr. Babasaheb Ambedkar Technological University, Lonere
+            </div>
+
+            <div class="edu-score">
+              CGPA:
+              <span>7.98</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-year">
+            2019 - 2021
+          </div>
+
+          <div class="edu-content">
+            <h3>Diploma in Computer Technology</h3>
+
+            <div class="edu-college">
+              BM Polytechnic, Solapur
+            </div>
+
+            <div class="edu-board">
+              Maharashtra State Board of Technical Education, Mumbai
+            </div>
+
+            <div class="edu-score">
+              Percentage:
+              <span>84.00%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-year">
+            2017 - 2019
+          </div>
+
+          <div class="edu-content">
+            <h3>Higher Secondary Certificate (HSC)</h3>
+
+            <div class="edu-college">
+              DBF Dayanand College of Arts & Science, Solapur
+            </div>
+
+            <div class="edu-board">
+              Maharashtra State Board of Secondary & Higher Secondary Education, Pune
+            </div>
+
+            <div class="edu-score">
+              Percentage:
+              <span>57.54%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-year">
+            2016 - 2017
+          </div>
+
+          <div class="edu-content">
+            <h3>Secondary School Certificate (SSC)</h3>
+
+            <div class="edu-college">
+              SSMV Aran
+            </div>
+
+            <div class="edu-board">
+              Maharashtra State Board of Secondary & Higher Secondary Education, Pune
+            </div>
+
+            <div class="edu-score">
+              Percentage:
+              <span>84.80%</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CORE SKILLS -->
+  <section id="skills">
+    <div class="section-tag">core skills</div>
+    <h2>Core Skills</h2>
+    <p class="section-sub">
+      Technical skills developed through software testing, automation, API validation, and insurance domain data
+      analysis.
+    </p>
+
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <h3>Testing</h3>
+        <span>Manual Testing</span>
+        <span>Automation Testing</span>
+        <span>Functional Testing</span>
+        <span>Smoke Testing</span>
+        <span>API Testing</span>
+        <span>Database Testing</span>
+      </div>
+
+      <div class="skill-card">
+        <h3>Automation</h3>
+        <span>Selenium WebDriver</span>
+        <span>Core Java</span>
+        <span>Basic Python Scripting</span>
+        <span>Postman</span>
+      </div>
+
+      <div class="skill-card">
+        <h3>Data & Reporting</h3>
+        <span>SQL</span>
+        <span>Advanced Excel</span>
+        <span>SAP BusinessIntelligence</span>
+        <span>Life Asia (Native Life Insurance Software)</span>
+      </div>
+
+      <div class="skill-card">
+        <h3>Process & Tools</h3>
+        <span>Agile Methodology</span>
+        <span>Defect Reporting</span>
+        <span>Defect Tracking</span>
+        <span>Test Case Design</span>
+        <span>Root Cause Analysis</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-tag">projects</div>
+    <h2>Featured Projects</h2>
+    <p class="section-sub">
+      Practical projects demonstrating testing, automation, API validation, and data analysis skills.
+    </p>
+
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-tag">Automation Testing</div>
+        <h3>Selenium Automation Framework</h3>
+        <p>
+          Built a Selenium WebDriver framework using Java for automated regression testing with reusable components and
+          test execution support.
+        </p>
+        <div class="project-tech">Java • Selenium • TestNG</div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-tag">API Testing</div>
+        <h3>Postman API Validation Suite</h3>
+        <p>
+          Created API collections with automated validations for status codes, schema verification, response body
+          checks, and regression testing.
+        </p>
+        <div class="project-tech">Postman • REST API • JSON</div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-tag">Data Validation</div>
+        <h3>Insurance Policy Verification</h3>
+        <p>
+          Validated reissued life insurance policies, identified processing errors, and generated quality reports using
+          SQL, Excel, Life Asia, and SAP BO.
+        </p>
+        <div class="project-tech">SQL • Excel • SAP BO • Life Asia</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- METRICS -->
+  <div id="metrics">
+    <div class="metrics-grid">
+      <div class="metric-cell">
+        <span class="metric-num counter" data-target="300">0</span>
+        <div class="metric-label">Test Cases Designed</div>
+      </div>
+      <div class="metric-cell">
+        <span class="metric-num counter" data-target="85">0</span>
+        <div class="metric-label">Defects Identified</div>
+      </div>
+      <div class="metric-cell">
+        <span class="metric-num counter" data-target="120">0</span>
+        <div class="metric-label">APIs Validated</div>
+      </div>
+      <div class="metric-cell">
+        <span class="metric-num counter" data-target="40">0</span>
+        <div class="metric-label">Automation Scripts</div>
+      </div>
+      <div class="metric-cell">
+        <span class="metric-num counter" data-target="60">0</span>
+        <div class="metric-label">Validation Reports</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW I APPROACH QUALITY -->
+  <section id="process">
+    <div class="section-tag">workflow</div>
+    <h2>How I Approach Quality</h2>
+    <p class="section-sub">A deliberate, systematic process from requirements to release confidence.</p>
+    <div class="process-flow">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <div class="step-title">Understand Requirements</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <div class="step-title">Identify Risks</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <div class="step-title">Design Test Scenarios</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">04</div>
+        <div class="step-title">Create Test Cases</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">05</div>
+        <div class="step-title">Validate APIs</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">06</div>
+        <div class="step-title">Verify Data Integrity</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">07</div>
+        <div class="step-title">Automate Repetitive Checks</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">08</div>
+        <div class="step-title">Support Release Confidence</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEFECT INVESTIGATION -->
+  <section id="defects">
+    <div class="section-tag">case studies</div>
+    <h2>Defect Investigation</h2>
+    <p class="section-sub">Real-world defect analysis with root cause identification, impact assessment, and resolution
+      validation.</p>
+    <div class="defect-grid">
+
+      <!-- Card 1 -->
+      <div class="defect-card" onclick="toggleDefect(this)">
+        <div class="defect-header">
+          <span class="defect-id">BUG-2024-041</span>
+          <span class="severity sev-high">High</span>
+        </div>
+        <div class="defect-body">
+          <div class="defect-title">Commission Validation Issue</div>
+          <ul class="defect-timeline">
+            <li><span class="phase">Problem</span><span class="detail">Commission calculations returning incorrect
+                values for multi-tier agents</span></li>
+            <li><span class="phase">Investigation</span><span class="detail">Traced through commission engine logic and
+                SQL procedures</span></li>
+            <li><span class="phase">Root Cause</span><span class="detail">Rounding logic applied before tier split, not
+                after</span></li>
+          </ul>
+        </div>
+        <div class="defect-expand">
+          <div class="expand-section">
+            <div class="expand-label">Impact</div>
+            <div class="expand-text">Affected 12% of agents. Overpayment of ~$4,200 identified across last billing
+              cycle. Financial audit triggered.</div>
+          </div>
+          <div class="expand-section">
+            <div class="expand-label">Resolution</div>
+            <div class="expand-text">Fixed calculation order in stored procedure SP_CALC_COMMISSION. Backfill script
+              executed for affected records.</div>
+          </div>
+          <div class="expand-section">
+            <div class="expand-label">Validation</div>
+            <div class="expand-text">Ran 24 regression test cases across all tier combinations. SQL query verified
+              record correction. Signed off after 3 clean runs.</div>
+          </div>
+        </div>
+        <div class="defect-toggle"><span class="toggle-icon">▼</span> View Full Analysis</div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="defect-card" onclick="toggleDefect(this)">
+        <div class="defect-header">
+          <span class="defect-id">BUG-2024-067</span>
+          <span class="severity sev-crit">Critical</span>
+        </div>
+        <div class="defect-body">
+          <div class="defect-title">Policy Data Mismatch</div>
+          <ul class="defect-timeline">
+            <li><span class="phase">Problem</span><span class="detail">Policy records in UI not matching database values
+                post-sync</span></li>
+            <li><span class="phase">Investigation</span><span class="detail">Compared API response vs DB directly via
+                SQL, identified field truncation</span></li>
+            <li><span class="phase">Root Cause</span><span class="detail">VARCHAR(50) field truncating policy holder
+                names over 50 chars during migration</span></li>
+          </ul>
+        </div>
+        <div class="defect-expand">
+          <div class="expand-section">
+            <div class="expand-label">Impact</div>
+            <div class="expand-text">324 policy records corrupted. Potential compliance violation. Customer-facing
+              display showing incomplete data.</div>
+          </div>
+          <div class="expand-section">
+            <div class="expand-label">Resolution</div>
+            <div class="expand-text">Column altered to VARCHAR(150). Migration script re-run on source data. ETL
+              pipeline updated with validation rule.</div>
+          </div>
+          <div class="expand-section">
+            <div class="expand-label">Validation</div>
+            <div class="expand-text">Data integrity check query run across all 324 records. Cross-referenced source vs
+              target. 100% match confirmed.</div>
+          </div>
+        </div>
+        <div class="defect-toggle"><span class="toggle-icon">▼</span> View Full Analysis</div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="defect-card" onclick="toggleDefect(this)">
+        <div class="defect-header">
+          <span class="defect-id">BUG-2024-089</span>
+          <span class="severity sev-med">Medium</span>
+        </div>
+        <div class="defect-body">
+          <div class="defect-title">API Response Validation Failure</div>
+          <ul class="defect-timeline">
+            <li><span class="phase">Problem</span><span class="detail">GET /policy/{id} returning 200 but with null
+                premium_amount field</span></li>
+            <li><span class="phase">Investigation</span><span class="detail">Postman collection run + schema validation
+                identified nullable field</span></li>
+            <li><span class="phase">Root Cause</span><span class="detail">New optional product type not handled in
+                serializer mapping</span></li>
+          </ul>
+        </div>
+        <div class="defect-expand">
+          <div class="expand-section">
+            <div class="expand-label">Impact</div>
+            <div class="expand-text">Downstream billing service consumed null value, producing $0.00 invoices for 18 new
+              policy types.</div>
+          </div>
+          <div class="expand-section">
+            <div class="expand-label">Resolution</div>
+            <div class="expand-text">Serializer updated with default value mapping. Added schema assertion test in
+              Postman collection.</div>
+          </div>
+          <div class="expand-section">
+            <div class="expand-label">Validation</div>
+            <div class="expand-text">Ran Postman collection against staging. All 18 policy types returned non-null
+              premium_amount. Added to regression suite.</div>
+          </div>
+        </div>
+        <div class="defect-toggle"><span class="toggle-icon">▼</span> View Full Analysis</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- API TESTING LAB -->
+  <section id="api-lab">
+    <div class="section-tag">api validation</div>
+    <h2>API Testing Lab</h2>
+    <p class="section-sub">Systematic API validation covering status codes, schema, authentication, response body, and
+      performance.</p>
+    <div class="api-grid">
+
+      <div class="api-card">
+        <div class="api-card-header">
+          <span class="method get">GET</span>
+          <span class="endpoint">/user/profile</span>
+        </div>
+        <div class="api-body">
+          <div class="api-checks">
+            <span class="api-check">Status Code</span>
+            <span class="api-check">Schema</span>
+            <span class="api-check">Response Body</span>
+            <span class="api-check">Authentication</span>
+            <span class="api-check">Performance</span>
+          </div>
+          <div class="api-metrics">
+            <div class="api-metric">
+              <div class="api-metric-val">200</div>
+              <div class="api-metric-label">Status</div>
+            </div>
+            <div class="api-metric">
+              <div class="api-metric-val">187ms</div>
+              <div class="api-metric-label">Response</div>
+            </div>
+            <div class="api-metric">
+              <div class="api-metric-val">2.1kb</div>
+              <div class="api-metric-label">Payload</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="api-card">
+        <div class="api-card-header">
+          <span class="method post">POST</span>
+          <span class="endpoint">/order/create</span>
+        </div>
+        <div class="api-body">
+          <div class="api-checks">
+            <span class="api-check">Status Code</span>
+            <span class="api-check">Schema</span>
+            <span class="api-check">Response Body</span>
+            <span class="api-check">Idempotency</span>
+            <span class="api-check">Auth</span>
+          </div>
+          <div class="api-metrics">
+            <div class="api-metric">
+              <div class="api-metric-val">201</div>
+              <div class="api-metric-label">Status</div>
+            </div>
+            <div class="api-metric">
+              <div class="api-metric-val">342ms</div>
+              <div class="api-metric-label">Response</div>
+            </div>
+            <div class="api-metric">
+              <div class="api-metric-val">4.7kb</div>
+              <div class="api-metric-label">Payload</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="api-card">
+        <div class="api-card-header">
+          <span class="method put">PUT</span>
+          <span class="endpoint">/policy/{id}/update</span>
+        </div>
+        <div class="api-body">
+          <div class="api-checks">
+            <span class="api-check">Status Code</span>
+            <span class="api-check">Schema</span>
+            <span class="api-check">Data Integrity</span>
+            <span class="api-check">Validation</span>
+          </div>
+          <div class="api-metrics">
+            <div class="api-metric">
+              <div class="api-metric-val">200</div>
+              <div class="api-metric-label">Status</div>
+            </div>
+            <div class="api-metric">
+              <div class="api-metric-val">223ms</div>
+              <div class="api-metric-label">Response</div>
+            </div>
+            <div class="api-metric">
+              <div class="api-metric-val">1.8kb</div>
+              <div class="api-metric-label">Payload</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="api-card">
+        <div class="api-card-header">
+          <span class="method del">GET</span>
+          <span class="endpoint">/commission/calculate</span>
+        </div>
+        <div class="api-body">
+          <div class="api-checks">
+            <span class="api-check">Status Code</span>
+            <span class="api-check">Schema</span>
+            <span class="api-check">Calculation</span>
+            <span class="api-check">Edge Cases</span>
+          </div>
+          <div class="api-metrics">
+            <div class="api-metric">
+              <div class="api-metric-val">200</div>
+              <div class="api-metric-label">Status</div>
+            </div>
+            <div class="api-metric">
+              <div class="api-metric-val">519ms</div>
+              <div class="api-metric-label">Response</div>
+            </div>
+            <div class="api-metric">
+              <div class="api-metric-val">8.2kb</div>
+              <div class="api-metric-label">Payload</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- AUTOMATION IMPACT -->
+  <section id="automation">
+    <div class="section-tag">business value</div>
+    <h2>Automation Impact</h2>
+    <p class="section-sub">Measurable business value from replacing manual processes with reliable automation.</p>
+    <div class="impact-grid">
+      <div class="impact-card">
+        <div class="impact-before-after">
+          <div class="impact-box">
+            <div class="impact-label-sm">Before</div>
+            <div class="impact-val before">4 hrs</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:4px">Manual Validation</div>
+          </div>
+          <div class="arrow-impact">→</div>
+          <div class="impact-box">
+            <div class="impact-label-sm">After</div>
+            <div class="impact-val after">45 min</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:4px">Python Script</div>
+          </div>
+        </div>
+        <div class="reduction-badge">70% Reduction</div>
+        <div class="impact-desc">Commission validation automated via Python + SQL, running daily with email summary
+          report</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-before-after">
+          <div class="impact-box">
+            <div class="impact-label-sm">Before</div>
+            <div class="impact-val before">3 days</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:4px">Manual Regression</div>
+          </div>
+          <div class="arrow-impact">→</div>
+          <div class="impact-box">
+            <div class="impact-label-sm">After</div>
+            <div class="impact-val after">2.5 hrs</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:4px">Selenium Suite</div>
+          </div>
+        </div>
+        <div class="reduction-badge">94% Reduction</div>
+        <div class="impact-desc">Full regression suite automated with Selenium, triggered on every deployment pipeline
+        </div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-before-after">
+          <div class="impact-box">
+            <div class="impact-label-sm">Before</div>
+            <div class="impact-val before">2 hrs</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:4px">Manual API Checks</div>
+          </div>
+          <div class="arrow-impact">→</div>
+          <div class="impact-box">
+            <div class="impact-label-sm">After</div>
+            <div class="impact-val after">8 min</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:4px">Postman Collection</div>
+          </div>
+        </div>
+        <div class="reduction-badge">93% Reduction</div>
+        <div class="impact-desc">120-endpoint Postman collection with automated assertions runs pre-release every sprint
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLS IN ACTION -->
+  <section id="tools">
+    <div class="section-tag">tools & practice</div>
+    <h2>Tools In Action</h2>
+    <p class="section-sub">Not a list of technologies — but how I use them to deliver quality.</p>
+    <div class="tools-grid">
+      <div class="tool-card" onclick="openTool(1)">
+        <div class="tool-name">Selenium WebDriver</div>
+        <div class="tool-arrow">→</div>
+        <div class="tool-use">Web Automation Testing</div>
+      </div>
+      <div class="tool-card" onclick="openTool(2)">
+        <div class="tool-name">Manual Testing</div>
+        <div class="tool-arrow">→</div>
+        <div class="tool-use">Test Case Design, Review & Execution</div>
+      </div>
+      <div class="tool-card" onclick="openTool(3)">
+        <div class="tool-name">SQL</div>
+        <div class="tool-arrow">→</div>
+        <div class="tool-use">Database Validation & Data Verification</div>
+      </div>
+      <div class="tool-card" onclick="openTool(4)">
+        <div class="tool-name">Postman</div>
+        <div class="tool-arrow">→</div>
+        <div class="tool-use">API Testing & Response Validation</div>
+      </div>
+      <div class="tool-card" onclick="openTool(5)">
+        <div class="tool-name">Core Java</div>
+        <div class="tool-arrow">→</div>
+        <div class="tool-use">Object Oriented Programming Concepts & Automation Support</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRINCIPLES -->
+  <section id="principles">
+    <div class="section-tag">philosophy</div>
+    <h2>Principles I Follow</h2>
+    <p class="section-sub">The beliefs that shape how I approach quality engineering.</p>
+    <div class="principles-grid">
+      <div class="principle" onclick="openPrinciple(1)">
+        <div class="principle-num">01</div>
+        <div class="principle-title">Test Early</div>
+        <div class="principle-text">Defects cost 10× more to fix after release. I push quality left.</div>
+      </div>
+      <div class="principle" onclick="openPrinciple(2)">
+        <div class="principle-num">02</div>
+        <div class="principle-title">Verify Business Logic</div>
+        <div class="principle-text">Technical correctness means nothing if the business rule is wrong.</div>
+      </div>
+      <div class="principle" onclick="openPrinciple(3)">
+        <div class="principle-num">03</div>
+        <div class="principle-title">Validate Data</div>
+        <div class="principle-text">What the UI shows and what the database holds must always agree.</div>
+      </div>
+      <div class="principle" onclick="openPrinciple(4)">
+        <div class="principle-num">04</div>
+        <div class="principle-title">User Impact First</div>
+        <div class="principle-text">Severity is defined by real-world consequence, not technical complexity.</div>
+      </div>
+      <div class="principle" onclick="openPrinciple(5)">
+        <div class="principle-num">05</div>
+        <div class="principle-title">Automate Wisely</div>
+        <div class="principle-text">Automate the repetitive. Reserve human judgment for exploratory testing.</div>
+      </div>
+      <div class="principle" onclick="openPrinciple(6)">
+        <div class="principle-num">06</div>
+        <div class="principle-title">Prevent Regression</div>
+        <div class="principle-text">Every bug fixed is a new test case. Regressions are preventable failures.</div>
+      </div>
+      <div class="principle" onclick="openPrinciple(7)">
+        <div class="principle-num">07</div>
+        <div class="principle-title">Document Clearly</div>
+        <div class="principle-text">A defect report is only as useful as it is reproducible. Clarity is quality.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QA LEARNING RESOURCES -->
+  <section id="resources">
+
+    <div class="section-tag">
+      learning resources
+    </div>
+
+    <h2>QA Learning Resources</h2>
+
+    <div class="resource-hero">
+
+      <div class="resource-orb"></div>
+
+      <div class="resource-left">
+
+        <div class="resource-kicker">
+          QA KNOWLEDGE BASE
+        </div>
+
+        <h3>
+          Learn Testing Through
+          Real-World Practice
+        </h3>
+
+        <p>
+          A growing collection of practical QA learning material,
+          interview preparation guides, test case examples,
+          bug reports, API validation notes, Core Java resources,
+          and automation content created throughout my journey
+          in software testing.
+        </p>
+
+        <div class="resource-buttons">
+
+          <a href="resources.html" class="btn-primary">
+            Explore All Resources →
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="resource-right">
+
+        <div class="resource-metric">
+          <div class="metric-number">
+            01
+          </div>
+
+          <div class="metric-label">
+            Resource Available
+          </div>
+        </div>
+
+        <div class="resource-divider"></div>
+
+        <div class="resource-metric">
+          <div class="metric-number">
+            05+
+          </div>
+
+          <div class="metric-label">
+            Resources In Development
+          </div>
+        </div>
+
+        <div class="resource-divider"></div>
+
+        <div class="resource-metric">
+          <div class="metric-number">
+            ★
+          </div>
+
+          <div class="metric-label">
+            QA Starter Pack
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-tag" style="justify-content:center">get in touch</div>
+    <h2>Ready to Build Quality Together?</h2>
+    <p>I'm open to QA Engineering, SDET, and Quality Assurance roles. Let's talk.</p>
+    <div class="contact-links">
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=vinaynalavade7536@gmail.com" target="_blank"
+        class=" btn-primary">✉ Email Me</a>
+      <a href="https://www.linkedin.com/in/vinaynalavade" target="_blank" class="btn-ghost">LinkedIn →</a>
+      <a href="https://drive.google.com/uc?export=download&id=1gmKEXRdXYbBTlMbwmUUtYEa5daQMzyYf" class="btn-ghost">↓
+        Download Resume</a>
+    </div>
+  </section>
+
+  <div id="contact-modal">
+    <div class="contact-card">
+
+      <button class="close-contact modal-close" id="close-contact">✕</button>
+
+      <div class="contact-title">Let's Connect</div>
+
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=vinaynalavade7536@gmail.com" target="_blank"
+        class="contact-item contact-link">
+        📧 Email Me
+      </a>
+
+      <a href="https://wa.me/919359645433" target="_blank" class="contact-item contact-link">
+        💬 WhatsApp Me
+      </a>
+
+      <a href="https://www.linkedin.com/in/vinaynalavade/" target="_blank" class="contact-item contact-link">
+        💼 LinkedIn Profile
+      </a>
+
+      <div class="contact-actions">
+
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=vinaynalavade7536@gmail.com" target="_blank"
+          class="contact-btn-primary">
+          Hire Me
+        </a>
+
+        <a href="https://drive.google.com/uc?export=download&id=1gmKEXRdXYbBTlMbwmUUtYEa5daQMzyYf"
+          class="contact-btn-secondary">
+          Resume
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div id="resume-modal">
+
+    <div class="resume-card">
+
+      <div class="resume-toolbar">
+
+        <div class="resume-title">
+          Resume Preview
+        </div>
+
+        <div class="resume-actions">
+
+          <a href="VinayNalavade_Resume.pdf" target="_blank" class="resume-download">
+            ⬇ Open PDF
+          </a>
+
+          <button id="close-resume" class="resume-close modal-close">
+            ✕
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- Desktop -->
+      <iframe src="VinayNalavade_Resume.pdf" class="resume-frame">
+      </iframe>
+
+      <!-- Mobile -->
+      <div class="mobile-resume">
+
+        <h3>Resume Preview</h3>
+
+        <p>
+          For the best experience, open the resume in your device's PDF viewer.
+        </p>
+
+        <a href="VinayNalavade_Resume.pdf" target="_blank" class="resume-download">
+          Open Resume
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="principle-modal">
+
+    <div class="principle-modal-card">
+
+      <button class="modal-close" id="close-principle">✕</button>
+
+      <h3 id="principle-title"></h3>
+
+      <div id="principle-content"></div>
+
+    </div>
+
+  </div>
+
+  <div id="tool-modal">
+
+    <div class="tool-modal-card">
+
+      <button id="close-tool">✕</button>
+
+      <h3 id="tool-title"></h3>
+
+      <div id="tool-content"></div>
+
+    </div>
+
+  </div>
+
+  <div id="checklist-modal">
+
+    <div class="checklist-modal-card">
+
+      <button id="close-checklist">✕</button>
+
+      <h3 id="checklist-title"></h3>
+
+      <div id="checklist-content"></div>
+
+    </div>
+
+  </div>
+
+
+  <footer>
+    <div class="footer-content">
+
+      <div class="footer-name">
+        VINAY<span class="logo-dot">.</span>QA
+      </div>
+
+      <div class="footer-text">
+        Manual Testing • API Testing • SQL • Automation
+      </div>
+
+      <div class="footer-copy">
+        Open to QA and Software Testing opportunities.
+        Built with HTML, CSS & JavaScript.
+        Designed and Tested by Vinay Nalavade
+      </div>
+
+      <div class="footer-copy">
+        © 2026 Vinay Nalavade.
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

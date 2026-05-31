@@ -33,10 +33,8 @@ exports.handler = async (event) => {
     }
 
     const pdfPath = path.join(
-      process.cwd(),
-      "assets",
-      "notes",
-      "CoreJava-Vinay.pdf"
+        __dirname,
+        "CoreJava-Vinay.pdf"
     );
 
     const pdfBuffer =

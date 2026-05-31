@@ -9,7 +9,9 @@ exports.handler = async (event) => {
       key_secret: process.env.RAZORPAY_KEY_SECRET
     });
 
-    const body = JSON.parse(event.body);
+    console.log("EVENT BODY:", event.body);
+
+    const body = JSON.parse(event.body);  
 
     const order = await razorpay.orders.create({
       amount: body.amount,
@@ -33,7 +35,7 @@ exports.handler = async (event) => {
     statusCode: 500,
     body: JSON.stringify({
       error: error.message,
-      stack: error.stack
+      rawBody: event.body || null
     })
   };
 }

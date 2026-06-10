@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Framework Architecture | Vinay Nalavade</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,300;9..144,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav>
+        <a href="index.html" class="nav-logo">
+            VINAY<span class="logo-dot">.</span>QA
+        </a>
+
+        <div class="nav-right">
+            <ul>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="resources.html" class="nav-link">Resources</a></li>
+                <li><a href="starter-pack.html" class="nav-link">Starter Pack</a></li>
+
+                <li class="more-menu">
+                    <a href="#">Architecture ▾</a>
+
+                    <div class="more-dropdown">
+                        <a href="#overview">Overview</a>
+                        <a href="#modules">Modules</a>
+                        <a href="#flow">Execution Flow</a>
+                        <a href="#repository">Repository</a>
+                    </div>
+                </li>
+            </ul>
+
+            <button id="theme-toggle">🌙</button>
+        </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="starter-hero">
+        <div class="starter-orb"></div>
+
+        <div class="section-tag">FRAMEWORK DESIGN</div>
+
+        <h1>QA Automation Framework Architecture</h1>
+
+        <p class="starter-desc">
+            Scalable Selenium framework built using Java, TestNG, Page Object Model, reusable utilities and reporting.
+        </p>
+
+        <div class="architecture-status">
+            🚧 CURRENTLY UNDER DEVELOPMENT
+        </div>
+        <div class="starter-highlights">
+            <span>Selenium</span>
+            <span>Java</span>
+            <span>TestNG</span>
+            <span>Page Object Model</span>
+        </div>
+    </section>
+
+    <!-- Framework Overview -->
+    <section>
+        <div class="section-tag">OVERVIEW</div>
+
+        <h2>Framework Overview</h2>
+
+        <div class="about-showcase">
+
+            <div class="about-glow"></div>
+
+            <div class="about-main">
+
+                <p class="about-desc">
+                    This automation framework is designed using Page Object Model (POM) and follows a scalable architecture to support maintainable, reusable and robust UI automation testing.
+                </p>
+
+                <div class="about-highlights">
+
+                    <div class="about-highlight">
+                        <span>POM</span>
+                        <small>Design Pattern</small>
+                    </div>
+
+                    <div class="about-highlight">
+                        <span>TestNG</span>
+                        <small>Execution Engine</small>
+                    </div>
+
+                    <div class="about-highlight">
+                        <span>Maven</span>
+                        <small>Build Management</small>
+                    </div>
+
+                    <div class="about-highlight">
+                        <span>Extent</span>
+                        <small>Reporting</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="about-side">
+
+                <div class="about-stat">
+                    <span>6+</span>
+                    <small>Core Modules</small>
+                </div>
+
+                <div class="about-stat">
+                    <span>100%</span>
+                    <small>Reusable Design</small>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Folder Structure -->
+    <section>
+        <div class="section-tag">STRUCTURE</div>
+
+        <h2>Framework Modules</h2>
+        <p class="section-sub">
+            Framework organization designed for scalability, maintainability and reusable automation components.
+        </p>
+        <div class="pack-grid">
+
+    <div class="pack-card">
+        <div class="pack-icon">⚙️</div>
+        <h3>core/config</h3>
+        <p>
+            Centralized framework configuration management including environment settings and execution properties.
+        </p>
+    </div>
+
+    <div class="pack-card">
+            <div class="pack-icon">🛠️</div>
+            <h3>core/utils</h3>
+            <p>
+                Reusable utility classes used across the framework to reduce code duplication and improve maintainability.
+            </p>
+        </div>
+
+        <div class="pack-card">
+            <div class="pack-icon">🚗</div>
+            <h3>ui/drivers</h3>
+            <p>
+                Contains DriverFactory implementation responsible for browser initialization and WebDriver lifecycle management.
+            </p>
+        </div>
+
+        <div class="pack-card">
+            <div class="pack-icon">🏗️</div>
+            <h3>ui/base</h3>
+            <p>
+                BasePage, BaseTest and AuthenticatedBaseTest providing common framework functionality and reusable actions.
+            </p>
+        </div>
+
+        <div class="pack-card">
+            <div class="pack-icon">📄</div>
+            <h3>ui/pages</h3>
+            <p>
+                Page Object Model implementation containing page-specific locators and business actions.
+            </p>
+        </div>
+
+        <div class="pack-card">
+            <div class="pack-icon">🧪</div>
+            <h3>ui/tests</h3>
+            <p>
+                TestNG test classes validating application workflows through reusable page objects.
+            </p>
+        </div>
+
+    </div>
+    </section>
+
+
+    <!-- Framework Flow -->
+    <section id="flow">
+        <div class="section-tag">EXECUTION FLOW</div>
+
+        <h2>Framework Execution Lifecycle</h2>
+        <p class="flow-hint">
+            Click any stage to explore implementation details.
+        </p>
+
+        <p class="section-sub">
+            Step-by-step execution journey from test initialization to final reporting.
+        </p>
+
+        <div class="process-flow">
+
+            <div class="process-step" onclick="openFramework('testng')">
+                <div class="step-num">01</div>
+                <div class="step-title">TestNG Test</div>
+            </div>
+
+            <div class="process-step" onclick="openFramework('basetest')">
+                <div class="step-num">02</div>
+                <div class="step-title">BaseTest</div>
+            </div>
+
+            <div class="process-step" onclick="openFramework('driverfactory')">
+                <div class="step-num">03</div>
+                <div class="step-title">DriverFactory</div>
+            </div>
+
+            <div class="process-step" onclick="openFramework('pageobjects')">
+                <div class="step-num">04</div>
+                <div class="step-title">Page Objects</div>
+            </div>
+
+            <div class="process-step" onclick="openFramework('webdriver')">
+                <div class="step-num">05</div>
+                <div class="step-title">WebDriver Actions</div>
+            </div>
+
+            <div class="process-step" onclick="openFramework('assertions')">
+                <div class="step-num">06</div>
+                <div class="step-title">Assertions</div>
+            </div>
+
+            <div class="process-step" onclick="openFramework('results')">
+                <div class="step-num">07</div>
+                <div class="step-title">Results</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section id="structure">
+        <div class="section-tag">ARCHITECTURE</div>
+
+        <h2>Framework Layers</h2>
+
+        <div class="process-flow">
+
+            <div class="process-step">
+                <div class="step-num">01</div>
+                <div class="step-title">Core Layer</div>
+                <small>config • utils</small>
+            </div>
+
+            <div class="process-step">
+                <div class="step-num">02</div>
+                <div class="step-title">UI Automation</div>
+                <small>drivers • base • pages</small>
+            </div>
+
+            <div class="process-step">
+                <div class="step-num">03</div>
+                <div class="step-title">Test Layer</div>
+                <small>tests</small>
+            </div>
+
+        </div>
+    </section> 
+
+    <section id="repository">
+        <div class="section-tag">SOURCE CODE</div>
+
+        <h2>Framework Repository</h2>
+        <p class="section-sub">
+            Live GitHub repository containing the latest framework implementation and ongoing enhancements.
+        </p>
+
+        <div class="repo-card">
+
+            <div class="repo-glow"></div>
+
+            <div class="repo-content">
+
+                <div class="repo-header">
+                    <h3>QA Automation Framework</h3>
+                    <span class="repo-status">LIVE</span>
+                </div>
+
+                <p>
+                    Real-world Selenium automation framework built using Java,
+                    TestNG, Page Object Model and reusable framework components.
+                </p>
+
+                <div class="repo-features">
+                    <span>Java</span>
+                    <span>Selenium</span>
+                    <span>TestNG</span>
+                    <span>Maven</span>
+                    <span>POM</span>
+                </div>
+
+                <a href="https://github.com/VinayO7/qa-automation-framework"
+                target="_blank"
+                class="repo-btn">
+                    View Source Code →
+                </a>
+
+            </div>
+
+        </div>
+    </section>
+
+<footer>
+    <div class="footer-content">
+
+      <div class="footer-name">
+        VINAY<span class="logo-dot">.</span>QA
+      </div>
+
+      <div class="footer-text">
+        Manual Testing • API Testing • SQL • Automation
+      </div>
+
+      <div class="footer-copy">
+        Open to QA and Software Testing opportunities.
+        Built with HTML, CSS & JavaScript.
+        Designed and Tested by Vinay Nalavade
+      </div>
+
+      <div class="footer-copy">
+        © 2026 Vinay Nalavade.
+      </div>
+
+    </div>
+  </footer>
+
+<script src="script.js"></script>
+
+    <div id="framework-modal">
+        <div class="tool-modal-card">
+            <button id="close-framework" type="button">
+                ✕
+            </button>
+            <div class="framework-scroll">
+                <div class="framework-modal-body">
+                    <h2 id="framework-title"></h2>
+                    <div id="framework-content"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>

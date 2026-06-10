@@ -829,3 +829,716 @@ async function handleCheckoutButton() {
       }
     });
   });
+
+  document.querySelectorAll('a[href$=".html"]').forEach(link => {
+    link.addEventListener('click', function (e) {
+
+        if (this.target === '_blank') return;
+
+        e.preventDefault();
+
+        document.body.classList.add('page-exit');
+
+        setTimeout(() => {
+            window.location.href = this.href;
+        }, 250);
+    });
+});
+
+const frameworkData = {
+    testng: {
+    title: "🧪 TestNG Test Execution",
+
+    content: `
+
+            <div class="framework-block">
+                <h4>Purpose</h4>
+
+                <p>
+                    TestNG is the execution engine of my automation framework.
+                    It controls test execution, manages test lifecycle events,
+                    performs validations and generates execution reports.
+                </p>
+            </div>
+
+            <div class="framework-block">
+                <h4>How I Implemented It</h4>
+
+                <ul>
+                    <li>Used @Test annotations to execute test scenarios.</li>
+                    <li>Used @BeforeMethod for test setup activities.</li>
+                    <li>Used @AfterMethod for browser cleanup and teardown.</li>
+                    <li>Integrated TestNG assertions for validation.</li>
+                    <li>Managed execution flow through BaseTest inheritance.</li>
+                    <li>Executed multiple test classes under a common framework structure.</li>
+                </ul>
+            </div>
+
+            <div class="framework-block">
+                <h4>Framework Files</h4>
+
+                <ul>
+                    <li>LaunchTest.java</li>
+                    <li>AddEmployeeTest.java</li>
+                    <li>EmployeePersonalDetailsTest.java</li>
+                    <li>BaseTest.java</li>
+                </ul>
+            </div>
+
+            <div class="framework-block">
+                <h4>Execution Flow</h4>
+
+                <p>
+                    Test execution starts from a TestNG test class.
+                    TestNG invokes BaseTest setup methods,
+                    initializes WebDriver through DriverFactory,
+                    executes Page Object methods,
+                    performs assertions and finally generates execution results.
+                </p>
+            </div>
+
+            <div class="framework-block">
+                <h4>Why I Chose TestNG</h4>
+
+                <p>
+                    I selected TestNG because it provides powerful annotations,
+                    flexible test execution control, assertion support,
+                    dependency management and reporting capabilities.
+                    These features make the framework scalable and maintainable
+                    for real-world automation projects.
+                </p>
+            </div>
+
+            <div class="framework-block">
+                <h4>Interview Talking Points</h4>
+
+                <ul>
+                    <li>Execution engine of the entire framework.</li>
+                    <li>Supports annotations, grouping and prioritization.</li>
+                    <li>Provides built-in assertion mechanisms.</li>
+                    <li>Easy integration with reporting tools.</li>
+                    <li>Suitable for scalable Page Object Model frameworks.</li>
+                </ul>
+            </div>
+
+        `
+    },
+    basetest: {
+    title: "🏗 BaseTest",
+
+    content: `
+
+            <div class="framework-block">
+                <h4>Purpose</h4>
+
+                <p>
+                    BaseTest acts as the foundation of the framework.
+                    Every test class inherits common setup and teardown
+                    functionality from this layer, ensuring consistency
+                    across all automated tests.
+                </p>
+            </div>
+
+            <div class="framework-block">
+                <h4>How I Implemented It</h4>
+
+                <ul>
+                    <li>Created a reusable parent class for all test classes.</li>
+                    <li>Loaded framework configuration before execution.</li>
+                    <li>Initialized WebDriver through DriverFactory.</li>
+                    <li>Launched the application URL automatically.</li>
+                    <li>Handled browser cleanup after execution.</li>
+                    <li>Reduced duplicate code across test classes.</li>
+                </ul>
+            </div>
+
+            <div class="framework-block">
+                <h4>Framework Files</h4>
+
+                <ul>
+                    <li>BaseTest.java</li>
+                    <li>AuthenticatedBaseTest.java</li>
+                    <li>ConfigReader.java</li>
+                    <li>DriverFactory.java</li>
+                </ul>
+            </div>
+
+            <div class="framework-block">
+                <h4>Execution Flow</h4>
+
+                <p>
+                    When a TestNG test starts, execution first enters BaseTest.
+                    BaseTest loads configuration values, creates a WebDriver
+                    instance through DriverFactory, launches the application,
+                    and prepares the environment before the test logic begins.
+                </p>
+            </div>
+
+            <div class="framework-block">
+                <h4>Responsibilities</h4>
+
+                <ul>
+                    <li>Framework initialization.</li>
+                    <li>Browser startup.</li>
+                    <li>Configuration management.</li>
+                    <li>Driver lifecycle management.</li>
+                    <li>Common setup and teardown activities.</li>
+                </ul>
+            </div>
+
+            <div class="framework-block">
+                <h4>Why I Added BaseTest</h4>
+
+                <p>
+                    Without BaseTest, every test class would contain duplicate
+                    browser setup and cleanup code. By centralizing these
+                    responsibilities, the framework becomes cleaner,
+                    easier to maintain and more scalable as new tests are added.
+                </p>
+            </div>
+
+            <div class="framework-block">
+                <h4>Interview Talking Points</h4>
+
+                <ul>
+                    <li>Acts as the parent class for all test classes.</li>
+                    <li>Provides framework-level setup and teardown.</li>
+                    <li>Supports code reusability and maintainability.</li>
+                    <li>Centralizes browser and configuration management.</li>
+                    <li>Reduces duplication across automation scripts.</li>
+                </ul>
+            </div>
+
+        `
+    },
+    driverfactory: {
+    title: "🚗 DriverFactory",
+
+    content: `
+
+            <div class="framework-block">
+                <h4>Purpose</h4>
+
+                <p>
+                    DriverFactory is responsible for creating and managing
+                    WebDriver instances. It centralizes browser initialization
+                    logic and ensures that browser setup is maintained in a
+                    single location within the framework.
+                </p>
+            </div>
+
+            <div class="framework-block">
+                <h4>How I Implemented It</h4>
+
+                <ul>
+                    <li>Created a dedicated DriverFactory class.</li>
+                    <li>Initialized ChromeDriver from a central location.</li>
+                    <li>Configured browser startup settings.</li>
+                    <li>Managed browser window initialization.</li>
+                    <li>Returned WebDriver instances to BaseTest.</li>
+                    <li>Separated browser creation from test logic.</li>
+                </ul>
+            </div>
+
+            <div class="framework-block">
+                <h4>Framework Files</h4>
+
+                <ul>
+                    <li>DriverFactory.java</li>
+                    <li>BaseTest.java</li>
+                    <li>AuthenticatedBaseTest.java</li>
+                </ul>
+            </div>
+
+            <div class="framework-block">
+                <h4>Execution Flow</h4>
+
+                <p>
+                    During test execution, BaseTest requests a browser instance.
+                    DriverFactory creates and configures the WebDriver,
+                    returns it to BaseTest, and the driver is then used
+                    throughout the Page Object layer.
+                </p>
+            </div>
+
+            <div class="framework-block">
+                <h4>Why Not Create ChromeDriver Directly In BaseTest?</h4>
+
+                <p>
+                    Creating WebDriver directly inside BaseTest tightly couples
+                    browser creation with test initialization. DriverFactory
+                    follows the Single Responsibility Principle by keeping
+                    browser management separate from test setup logic.
+                </p>
+            </div>
+
+            <div class="framework-block">
+                <h4>Scalability Benefits</h4>
+
+                <ul>
+                    <li>Easy to add Firefox, Edge or RemoteWebDriver support.</li>
+                    <li>Supports future Selenium Grid integration.</li>
+                    <li>Centralized browser configuration.</li>
+                    <li>Reduces maintenance effort.</li>
+                    <li>Improves framework extensibility.</li>
+                </ul>
+            </div>
+
+            <div class="framework-block">
+                <h4>Interview Talking Points</h4>
+
+                <ul>
+                    <li>Centralized WebDriver management layer.</li>
+                    <li>Follows Single Responsibility Principle.</li>
+                    <li>Improves maintainability and scalability.</li>
+                    <li>Supports future multi-browser execution.</li>
+                    <li>Keeps BaseTest clean and focused on test setup.</li>
+                </ul>
+            </div>
+
+        `
+    },
+    pageobjects: {
+    title: "📄 Page Object Model (POM)",
+
+    content: `
+
+            <div class="framework-block">
+                <h4>Purpose</h4>
+
+                <p>
+                    The Page Object Model (POM) layer separates page interactions
+                    from test logic. Each application page is represented by a
+                    dedicated Java class containing locators and reusable actions.
+                </p>
+            </div>
+
+            <div class="framework-block">
+                <h4>How I Implemented It</h4>
+
+                <ul>
+                    <li>Created separate page classes for each application page.</li>
+                    <li>Stored element locators inside page classes.</li>
+                    <li>Encapsulated user actions into reusable methods.</li>
+                    <li>Kept test classes free from locator definitions.</li>
+                    <li>Inherited common functionality through BasePage.</li>
+                </ul>
+            </div>
+
+            <div class="framework-block">
+                <h4>Framework Files</h4>
+
+                <ul>
+                    <li>BasePage.java</li>
+                    <li>LoginPage.java</li>
+                    <li>DashboardPage.java</li>
+                    <li>PIMPage.java</li>
+                    <li>AddEmployeePage.java</li>
+                    <li>EmployeeDetailsPage.java</li>
+                </ul>
+            </div>
+
+            <div class="framework-block">
+                <h4>Execution Flow</h4>
+
+                <p>
+                    Test classes never interact with locators directly.
+                    A test calls a Page Object method, the Page Object performs
+                    Selenium actions through BasePage methods, and returns control
+                    back to the test.
+                </p>
+            </div>
+
+            <div class="framework-block">
+                <h4>Example From My Framework</h4>
+
+                <p>
+                    During employee creation, AddEmployeeTest calls methods from
+                    AddEmployeePage. The page class handles element identification,
+                    form filling and button clicks, while the test focuses only on
+                    business validation.
+                </p>
+            </div>
+
+            <div class="framework-block">
+                <h4>Benefits Achieved</h4>
+
+                <ul>
+                    <li>Improved code readability.</li>
+                    <li>Reduced locator duplication.</li>
+                    <li>Easier maintenance when UI changes.</li>
+                    <li>Better reusability of page actions.</li>
+                    <li>Cleaner and more scalable framework structure.</li>
+                </ul>
+            </div>
+
+            <div class="framework-block">
+                <h4>Why BasePage Exists?</h4>
+
+                <p>
+                    BasePage contains common Selenium operations such as click(),
+                    type(), getText() and waits. This prevents duplicate code
+                    across all page classes and keeps page objects focused on
+                    business-specific actions.
+                </p>
+            </div>
+
+            <div class="framework-block">
+                <h4>Interview Talking Points</h4>
+
+                <ul>
+                    <li>Follows Page Object Model design pattern.</li>
+                    <li>Separates test logic from UI interaction logic.</li>
+                    <li>Improves maintainability and scalability.</li>
+                    <li>Uses BasePage for reusable Selenium actions.</li>
+                    <li>Reduces impact of UI changes on test scripts.</li>
+                </ul>
+            </div>
+
+        `
+    },
+    webdriver: {
+    title: "🖱 WebDriver Actions",
+
+    content: `
+
+            <div class="framework-block">
+                <h4>Purpose</h4>
+
+                <p>
+                    WebDriver Actions form the interaction layer of the framework.
+                    Instead of writing Selenium commands directly inside test classes,
+                    all browser interactions are encapsulated into reusable methods.
+                </p>
+            </div>
+
+            <div class="framework-block">
+                <h4>How I Implemented It</h4>
+
+                <ul>
+                    <li>Centralized Selenium interactions inside BasePage.</li>
+                    <li>Created reusable click(), type() and utility methods.</li>
+                    <li>Separated browser actions from business test logic.</li>
+                    <li>Reduced duplicate Selenium code across page classes.</li>
+                    <li>Used explicit waits before interacting with elements.</li>
+                </ul>
+            </div>
+
+            <div class="framework-block">
+                <h4>Framework Files</h4>
+
+                <ul>
+                    <li>BasePage.java</li>
+                    <li>WaitUtil.java</li>
+                    <li>LoginPage.java</li>
+                    <li>DashboardPage.java</li>
+                    <li>AddEmployeePage.java</li>
+                    <li>EmployeeDetailsPage.java</li>
+                </ul>
+            </div>
+
+            <div class="framework-block">
+                <h4>Execution Flow</h4>
+
+                <p>
+                    When a test invokes a Page Object method, the Page Object
+                    internally calls reusable BasePage methods. These methods
+                    execute Selenium WebDriver commands such as clicking,
+                    typing, waiting and retrieving values from the application.
+                </p>
+            </div>
+
+            <div class="framework-block">
+                <h4>Example From My Framework</h4>
+
+                <p>
+                    While creating an employee, AddEmployeePage does not directly
+                    contain large Selenium scripts. Instead, it calls reusable
+                    BasePage methods such as type() and click() which internally
+                    execute WebDriver actions.
+                </p>
+            </div>
+
+            <div class="framework-block">
+                <h4>Why I Used This Approach</h4>
+
+                <p>
+                    Direct WebDriver usage inside every page and test class leads
+                    to code duplication and difficult maintenance. By centralizing
+                    browser actions in BasePage, the framework becomes cleaner,
+                    reusable and easier to scale.
+                </p>
+            </div>
+
+            <div class="framework-block">
+                <h4>Common Actions Used</h4>
+
+                <ul>
+                    <li>click()</li>
+                    <li>type()</li>
+                    <li>getText()</li>
+                    <li>clear()</li>
+                    <li>findElement()</li>
+                    <li>Explicit Waits</li>
+                    <li>Page Navigation</li>
+                </ul>
+            </div>
+
+            <div class="framework-block">
+                <h4>Interview Talking Points</h4>
+
+                <ul>
+                    <li>Acts as the browser interaction layer.</li>
+                    <li>Implemented through reusable BasePage methods.</li>
+                    <li>Reduces code duplication across page objects.</li>
+                    <li>Improves maintainability and readability.</li>
+                    <li>Supports future framework scaling and enhancements.</li>
+                </ul>
+            </div>
+
+        `
+    },
+    assertions: {
+    title: "✅ Assertions & Validation Layer",
+
+    content: `
+
+            <div class="framework-block">
+                <h4>Purpose</h4>
+
+                <p>
+                    Assertions are responsible for validating application behavior.
+                    They compare actual results with expected results and determine
+                    whether a test case passes or fails.
+                </p>
+            </div>
+
+            <div class="framework-block">
+                <h4>How I Implemented It</h4>
+
+                <ul>
+                    <li>Used TestNG Assert class for validations.</li>
+                    <li>Verified page titles and page navigation.</li>
+                    <li>Validated employee creation workflows.</li>
+                    <li>Confirmed successful execution of business scenarios.</li>
+                    <li>Used assertions to determine test pass/fail status.</li>
+                </ul>
+            </div>
+
+            <div class="framework-block">
+                <h4>Framework Files</h4>
+
+                <ul>
+                    <li>LaunchTest.java</li>
+                    <li>AddEmployeeTest.java</li>
+                    <li>EmployeePersonalDetailsTest.java</li>
+                </ul>
+            </div>
+
+            <div class="framework-block">
+                <h4>Execution Flow</h4>
+
+                <p>
+                    After page actions are completed, assertions validate whether
+                    the application reached the expected state. If validation is
+                    successful, the test passes. If validation fails, TestNG marks
+                    the test as failed and records the failure in execution results.
+                </p>
+            </div>
+
+            <div class="framework-block">
+                <h4>Example From My Framework</h4>
+
+                <p>
+                    After performing user actions such as employee creation or
+                    personal details updates, assertions verify that the expected
+                    page, data or application state is displayed before the test
+                    is marked as successful.
+                </p>
+            </div>
+
+            <div class="framework-block">
+                <h4>Why Assertions Are Important</h4>
+
+                <p>
+                    Without assertions, Selenium would only perform browser actions
+                    without verifying outcomes. Assertions transform automation
+                    scripts into actual test cases by validating business
+                    requirements and expected results.
+                </p>
+            </div>
+
+            <div class="framework-block">
+                <h4>Common Assertion Types</h4>
+
+                <ul>
+                    <li>Assert.assertEquals()</li>
+                    <li>Assert.assertTrue()</li>
+                    <li>Assert.assertFalse()</li>
+                    <li>Page Validation Checks</li>
+                    <li>Text Verification</li>
+                    <li>Element Visibility Verification</li>
+                </ul>
+            </div>
+
+            <div class="framework-block">
+                <h4>Interview Talking Points</h4>
+
+                <ul>
+                    <li>Assertions determine test success or failure.</li>
+                    <li>Implemented using TestNG Assert class.</li>
+                    <li>Used for business validation, not browser actions.</li>
+                    <li>Separate verification logic from interaction logic.</li>
+                    <li>Critical component of every automation framework.</li>
+                </ul>
+            </div>
+
+        `
+    },
+    results: {
+    title: "📊 Results & Reporting",
+
+    content: `
+
+            <div class="framework-block">
+                <h4>Purpose</h4>
+
+                <p>
+                    The Results layer provides the final outcome of test execution.
+                    It captures pass/fail status, execution summaries and failure
+                    details, allowing testers to quickly assess application quality.
+                </p>
+            </div>
+
+            <div class="framework-block">
+                <h4>How I Implemented It</h4>
+
+                <ul>
+                    <li>Used TestNG execution reports.</li>
+                    <li>Captured pass and fail status for each test case.</li>
+                    <li>Reviewed execution summaries after every run.</li>
+                    <li>Used assertion results to determine final outcomes.</li>
+                    <li>Tracked failures for debugging and analysis.</li>
+                </ul>
+            </div>
+
+            <div class="framework-block">
+                <h4>Framework Files</h4>
+
+                <ul>
+                    <li>LaunchTest.java</li>
+                    <li>AddEmployeeTest.java</li>
+                    <li>EmployeePersonalDetailsTest.java</li>
+                    <li>test-output/ (Generated TestNG Reports)</li>
+                </ul>
+            </div>
+
+            <div class="framework-block">
+                <h4>Execution Flow</h4>
+
+                <p>
+                    After all test steps and assertions are completed, TestNG
+                    generates execution results. These results contain the
+                    overall execution summary, test status and failure details,
+                    providing visibility into framework execution.
+                </p>
+            </div>
+
+            <div class="framework-block">
+                <h4>What Gets Reported?</h4>
+
+                <ul>
+                    <li>Passed Test Cases</li>
+                    <li>Failed Test Cases</li>
+                    <li>Skipped Test Cases</li>
+                    <li>Execution Duration</li>
+                    <li>Failure Stack Traces</li>
+                    <li>Execution Summary</li>
+                </ul>
+            </div>
+
+            <div class="framework-block">
+                <h4>Current Framework Status</h4>
+
+                <p>
+                    The framework currently uses TestNG's built-in reporting
+                    mechanism. As the framework evolves, reporting can be enhanced
+                    further by integrating tools such as Extent Reports,
+                    Allure Reports or CI/CD dashboards.
+                </p>
+            </div>
+
+            <div class="framework-block">
+                <h4>Why Reporting Matters</h4>
+
+                <p>
+                    Automation execution is valuable only when results are easy
+                    to understand. Reporting provides visibility into test health,
+                    identifies failures quickly and helps teams make informed
+                    release decisions.
+                </p>
+            </div>
+
+            <div class="framework-block">
+                <h4>Interview Talking Points</h4>
+
+                <ul>
+                    <li>Final stage of the framework lifecycle.</li>
+                    <li>Driven by TestNG execution reports.</li>
+                    <li>Displays pass, fail and skipped test counts.</li>
+                    <li>Supports debugging through failure details.</li>
+                    <li>Can be extended with Extent Reports and Allure Reports.</li>
+                </ul>
+            </div>
+
+        `
+    }
+};
+
+function openFramework(type) {
+
+    const frameworkModal =
+        document.getElementById("framework-modal");
+
+    const frameworkTitle =
+        document.getElementById("framework-title");
+
+    const frameworkContent =
+        document.getElementById("framework-content");
+
+    if (!frameworkModal ||
+        !frameworkTitle ||
+        !frameworkContent) {
+        return;
+    }
+
+    frameworkTitle.innerHTML =
+        frameworkData[type].title;
+
+    frameworkContent.innerHTML =
+        frameworkData[type].content;
+
+    frameworkModal.classList.add("active");
+}
+
+function closeFramework() {
+
+    const frameworkModal =
+        document.getElementById("framework-modal");
+
+    if(frameworkModal){
+        frameworkModal.classList.remove("active");
+    }
+}
+
+document.addEventListener("click", function(e){
+
+    if(e.target.id==="close-framework"){
+        closeFramework();
+    }
+
+    if(e.target.id==="framework-modal"){
+        closeFramework();
+    }
+
+});

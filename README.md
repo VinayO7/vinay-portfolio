@@ -1,154 +1,156 @@
-# QA Automation Framework
+# Vinay Nalavade | QA Engineer Portfolio
 
-A scalable Selenium Automation Framework built using Java, Selenium WebDriver, TestNG, and Page Object Model (POM). This framework demonstrates industry-standard automation architecture with reusable components, centralized driver management, explicit waits, and maintainable test design.
+A modern and responsive personal portfolio website showcasing my experience, skills, projects, automation framework architecture, and QA learning resources.
 
-## Framework Architecture
+## Live Website
 
-The framework follows a layered architecture:
+🌐 Portfolio Website
 
-```text
-TestNG Test
-    ↓
-BaseTest
-    ↓
-DriverFactory
-    ↓
-Page Objects
-    ↓
-BasePage Actions
-    ↓
-Selenium WebDriver
-    ↓
-Assertions
-    ↓
-Results & Reporting
-```
+https://vinayo7.github.io/vinay-portfolio/
+
+## About
+
+This portfolio was designed and developed to present my professional journey as a QA Engineer and Automation Tester.
+
+The website highlights:
+
+* Professional profile
+* Technical skills
+* QA projects
+* Selenium Automation Framework Architecture
+* Downloadable QA Starter Pack
+* Contact information
+* GitHub repositories
+* LinkedIn profile
+
+## Features
+
+### Responsive Design
+
+* Desktop optimized
+* Tablet optimized
+* Mobile friendly
+
+### Interactive UI
+
+* Smooth animations
+* Glassmorphism design
+* Hover effects
+* Responsive navigation
+
+### Automation Framework Showcase
+
+Dedicated architecture page demonstrating:
+
+* TestNG
+* BaseTest
+* DriverFactory
+* Page Object Model
+* WebDriver Actions
+* Assertions
+* Reporting
+
+Each framework component includes implementation details and interview-focused explanations.
+
+### QA Resources Section
+
+Provides curated learning materials for:
+
+* Manual Testing
+* Automation Testing
+* API Testing
+* SQL
+* Selenium
+* QA Career Guidance
 
 ## Tech Stack
 
-* Java
-* Selenium WebDriver
-* TestNG
-* Maven
-* Page Object Model (POM)
-* WebDriverManager
-* Git & GitHub
+### Frontend
+
+* HTML5
+* CSS3
+* JavaScript
+
+### Deployment
+
+* GitHub Pages
+
+### Version Control
+
+* Git
+* GitHub
 
 ## Project Structure
 
 ```text
-src
-├── main
-│   ├── java
-│   │   ├── core
-│   │   │   ├── config
-│   │   │   └── utils
-│   │   ├── ui
-│   │   │   ├── base
-│   │   │   ├── drivers
-│   │   │   └── pages
-│   └── resources
-│       └── config.properties
+vinay-portfolio
 │
-└── test
-    └── java
-        └── ui
-            └── tests
+├── index.html
+├── architecture.html
+├── resources.html
+├── starter-pack.html
+│
+├── style.css
+├── script.js
+│
+├── assets
+│   ├── images
+│   └── documents
+│
+└── README.md
 ```
 
-## Key Components
+## Key Sections
 
-### BaseTest
+### Home
 
-Provides common setup and teardown functionality for all test classes.
+Introduction, skills and professional overview.
 
-### DriverFactory
+### Projects
 
-Centralized WebDriver initialization and browser management.
+Showcases QA and automation projects.
 
-### Page Objects
+### Framework Architecture
 
-Encapsulates locators and page-specific actions to improve maintainability.
+Interactive framework execution lifecycle with detailed implementation explanations.
 
-### BasePage
+### Resources
 
-Contains reusable Selenium actions and utility methods.
+Learning resources and QA preparation material.
 
-### Wait Utilities
+### Contact
 
-Explicit wait implementation for handling dynamic web elements.
-
-### Assertions
-
-TestNG assertions used for validation and result verification.
-
-## Implemented Test Scenarios
-
-### Launch Application Test
-
-* Launch application
-* Verify successful page load
-
-### Add Employee Test
-
-* Login to application
-* Navigate to PIM module
-* Add employee
-* Verify successful creation
-
-### Employee Personal Details Test
-
-* Login to application
-* Update employee information
-* Verify successful update
-
-## Design Principles
-
-* Page Object Model (POM)
-* Separation of Concerns
-* Reusability
-* Maintainability
-* Scalability
-* Single Responsibility Principle
-
-## How To Run
-
-### Clone Repository
-
-```bash
-git clone https://github.com/VinayO7/qa-automation-framework.git
-```
-
-### Navigate To Project
-
-```bash
-cd qa-automation-framework
-```
-
-### Execute Tests
-
-```bash
-mvn test
-```
+Direct links to LinkedIn, GitHub and professional contact details.
 
 ## Future Enhancements
 
-* Cross-browser execution
-* Selenium Grid integration
-* Extent Reports
-* Allure Reports
-* CI/CD integration using GitHub Actions
-* Data-driven testing
-* Parallel execution
+* Dark/Light Theme Toggle
+* Blog Section
+* Live Test Execution Reports
+* CI/CD Demonstration
+* Project Filtering
+* Interactive Automation Demos
 
-## Author
+## About Me
 
 **Vinay Nalavade**
 
-QA Engineer | Automation Testing | Selenium | Java | API Testing
+QA Engineer | Manual Testing | Automation Testing | Selenium | Java | API Testing
+
+* Experience in Software Testing and Insurance Domain Validation
+* Hands-on experience with Selenium, Postman, SQL and Python
+* Passionate about building scalable automation frameworks
+
+## Connect With Me
 
 LinkedIn:
 https://www.linkedin.com/in/vinaynalavade/
 
+GitHub:
+https://github.com/VinayO7
+
 Portfolio:
 https://vinayo7.github.io/vinay-portfolio/
+
+Email:
+[vinaynalavade7536@gmail.com](mailto:vinaynalavade7536@gmail.com)
